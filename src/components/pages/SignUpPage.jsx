@@ -4,11 +4,8 @@ import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import TextField from '@material-ui/core/TextField';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Checkbox from '@material-ui/core/Checkbox';
 import Link from '@material-ui/core/Link';
 import { getAuthToken } from '../../redux-store/actions/authActions';
-import UserActions from '../../redux-store/actions/userActions';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
@@ -32,28 +29,7 @@ function Copyright() {
   );
 }
 
-const useStyles = makeStyles((theme) => ({
-  paper: {
-    marginTop: theme.spacing(8),
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
-  },
-  avatar: {
-    margin: theme.spacing(1),
-    backgroundColor: theme.palette.secondary.main,
-  },
-  form: {
-    width: '100%', // Fix IE 11 issue.
-    marginTop: theme.spacing(3),
-  },
-  submit: {
-    margin: theme.spacing(3, 0, 2),
-  },
-}));
-
 export function SignUp(props) {
-  const classes = useStyles();
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
@@ -84,14 +60,14 @@ export function SignUp(props) {
   return (
     <Container component="main" maxWidth="xs">
       <CssBaseline />
-      <div className={classes.paper}>
-        <Avatar className={classes.avatar}>
+      <div className="paper">
+        <Avatar className="avatar-logo">
           <LockOutlinedIcon />
         </Avatar>
         <Typography component="h1" variant="h5">
           Sign up
         </Typography>
-        <form className={classes.form} noValidate>
+        <form className="form" noValidate>
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>
               <TextField
@@ -146,6 +122,7 @@ export function SignUp(props) {
                 autoComplete="current-password"
                 value={password}
                 onChange={e => setPassword(e.target.value)}
+                style={{marginBottom: '10px'}}
               />
             </Grid>
           </Grid>
@@ -155,12 +132,12 @@ export function SignUp(props) {
             variant="contained"
             color="primary"
             disabled={loading}
-						className={classes.submit}
+						className="submit-button"
 						onClick={handleSignup}
           >
             Sign Up
           </Button>
-          <Grid container justify="flex-end">
+          <Grid container justify="flex-end" style={{marginTop: '10px'}}>
             <Grid item>
               <Link href="/login" variant="body2">
                 Already have an account? Sign in
