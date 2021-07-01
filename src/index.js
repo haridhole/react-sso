@@ -1,13 +1,38 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import { Provider } from 'react-redux';
+import { store, persistor } from './redux-store/Store';
+import Router from './Router';
+import { PersistGate } from 'redux-persist/integration/react';
+import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+import './scss/Index.scss';
 import reportWebVitals from './reportWebVitals';
 
+const theme = createMuiTheme({
+  palette: {
+    primary: {
+      light: '#6bafff',
+      main: '#1a80ef',
+      dark: '#0055bc',
+      contrastText: '#ffffff'
+    },
+    secondary: {
+      light: '#ff7870',
+      main: '#ec4344',
+      dark: '#b3001c',
+      contrastText: '#000000'
+    }
+  }
+});
+
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <MuiThemeProvider theme={theme}>
+    <Provider store={store}>
+      {/* <PersistGate loading={null} persistor={persistor}> */}
+        <Router />
+      {/* </PersistGate> */}
+    </Provider>
+  </MuiThemeProvider>,
   document.getElementById('root')
 );
 

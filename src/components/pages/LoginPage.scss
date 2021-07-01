@@ -1,0 +1,36 @@
+
+.paper {
+	margin-top: 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.avatar {
+	margin: 10px;
+}
+
+.form {
+	width: 100%;
+	margin-top: 2rem;
+}
+
+.submit {
+	margin: 40px 0 16px;
+}
+
+.or-seperator {
+    margin-top: 20px;
+    text-align: center;
+    border-top: 1px solid #ccc;
+}
+
+.signup-link {
+	margin-top: 20px;
+	text-align: center;
+}
+
+.phone-number {
+	margin-top: 10px;
+	text-align: center;
+}

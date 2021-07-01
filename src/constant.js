@@ -1,0 +1,9 @@
+
+export const LOCAL_STORAGE_X_AUTH_KEY = 'X-auth';
+export const GET_AUTH_TOKEN = 'GET_AUTH_TOKEN';
+export const SIGN_OUT = 'SIGN_OUT';
+export const RECEIVED_AUTH_TOKEN = 'RECIEVED_AUTH_TOKEN';
+
+export const GET_USER_REQUEST_MADE = 'GET_USER_REQUEST_MADE';
+export const GET_USER_RESOLVED = 'GET_USER_RESOLVED';
+export const GET_USER_FAILED = 'GET_USER_FAILED';
