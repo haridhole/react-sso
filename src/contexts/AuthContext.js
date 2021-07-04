@@ -31,6 +31,10 @@ export function AuthProvider({ children }) {
     return currentUser.updatePassword(password)
   }
 
+  function recaptchaVerifier(container, params){
+    return new auth.authRef.RecaptchaVerifier(container, params);
+  };
+
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged(user => {
       setCurrentUser(user)
